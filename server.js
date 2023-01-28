@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const { json } = require("express");
 const app = express();
 
 app.use(express.json());
@@ -98,6 +99,15 @@ const keyInterval = setInterval(() => {
   key = keys[n];
 }, 40000);
 
+app.get("/key", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(
+    JSON.stringify({
+      english: key.client_token,
+    })
+  );
+});
+
 // fetch("https://api.wit.ai/speech?v=20221114", {
 //   mode: "cors",
 //   method: "POST",
@@ -106,7 +116,7 @@ const keyInterval = setInterval(() => {
 // });
 
 app.post("/", async (req, res) => {
-  let result = {}
+  let result = {};
   const { audio } = req.body;
   result = await axios({
     url: "https://api.wit.ai/message?v=20230126&q=",
@@ -119,9 +129,9 @@ app.post("/", async (req, res) => {
     },
     body: { ...req.body },
   });
-  //console.log(key)
+  console.log(req.body);
   console.log(result);
   res.send(result);
 });
 
-app.listen(3000)
+app.listen(3000);
