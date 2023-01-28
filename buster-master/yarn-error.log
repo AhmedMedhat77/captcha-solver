@@ -1,0 +1,124 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ATI Technologies\ATI.ACE\Core-Static;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Selenium\Chrome;C:\Users\HP\Downloads;C:\Program Files\nodejs;C:\nvm-noinstall;C:\mongodb\bin;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Users\HP\scoop\shims;C:\Selenium\chrome;C:\Users\HP\AppData\Local\Programs\Microsoft VS Code\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.12.0
+
+Platform: 
+  win32 ia32
+
+Trace: 
+  Error: https://registry.yarnpkg.com/vuetify/-/vuetify-3.1.2.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\HP\Downloads\v14.12.0\node_modules\yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (events.js:420:28)
+      at ClientRequest.emit (events.js:314:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:774:9)
+      at Object.onceWrapper (events.js:420:28)
+      at TLSSocket.emit (events.js:326:22)
+      at TLSSocket.Socket._onTimeout (net.js:482:8)
+      at listOnTimeout (internal/timers.js:554:17)
+      at processTimers (internal/timers.js:497:7)
+
+npm manifest: 
+  {
+    "name": "buster",
+    "version": "2.0.1",
+    "author": "Armin Sebastian",
+    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/dessant/buster",
+    "repository": {
+      "url": "https://github.com/dessant/buster.git",
+      "type": "git"
+    },
+    "bugs": {
+      "url": "https://github.com/dessant/buster/issues"
+    },
+    "scripts": {
+      "_build": "cross-env NODE_ENV=development gulp build",
+      "build:chrome": "cross-env TARGET_ENV=chrome npm run _build",
+      "build:edge": "cross-env TARGET_ENV=edge npm run _build",
+      "build:firefox": "cross-env TARGET_ENV=firefox npm run _build",
+      "build:opera": "cross-env TARGET_ENV=opera npm run _build",
+      "_build:prod": "cross-env NODE_ENV=production gulp build",
+      "build:prod:chrome": "cross-env TARGET_ENV=chrome npm run _build:prod",
+      "build:prod:edge": "cross-env TARGET_ENV=edge npm run _build:prod",
+      "build:prod:firefox": "cross-env TARGET_ENV=firefox npm run _build:prod",
+      "build:prod:opera": "cross-env TARGET_ENV=opera npm run _build:prod",
+      "_build:prod:zip": "npm run _build:prod && gulp zip",
+      "build:prod:zip:chrome": "cross-env TARGET_ENV=chrome npm run _build:prod:zip",
+      "build:prod:zip:edge": "cross-env TARGET_ENV=edge npm run _build:prod:zip",
+      "build:prod:zip:firefox": "cross-env TARGET_ENV=firefox npm run _build:prod:zip",
+      "build:prod:zip:opera": "cross-env TARGET_ENV=opera npm run _build:prod:zip",
+      "start:chrome": "web-ext run -s dist/chrome -t chromium",
+      "start:firefox": "web-ext run -s dist/firefox -t firefox-desktop",
+      "start:android": "web-ext run -s dist/firefox -t firefox-android",
+      "inspect": "cross-env NODE_ENV=production gulp inspect",
+      "update": "ncu --upgrade",
+      "release": "standard-version",
+      "push": "git push --follow-tags origin master"
+    },
+    "dependencies": {
+      "@fontsource/roboto": "^4.5.8",
+      "audiobuffer-to-wav": "^1.0.0",
+      "bowser": "^2.11.0",
+      "core-js": "^3.26.1",
+      "crypto-js": "^4.1.1",
+      "p-queue": "^7.3.0",
+      "uuid": "^9.0.0",
+      "vue": "^3.2.45",
+      "vuetify": "^3.0.5",
+      "vueton": "^0.1.4",
+      "webextension-polyfill": "^0.10.0",
+      "wesa": "^0.3.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.20.5",
+      "@babel/preset-env": "^7.20.2",
+      "babel-loader": "^9.1.0",
+      "babel-plugin-lodash": "^3.3.4",
+      "cross-env": "^7.0.3",
+      "css-loader": "^6.7.2",
+      "cssnano": "^5.1.14",
+      "fs-extra": "^11.1.0",
+      "gulp": "^4.0.2",
+      "gulp-htmlmin": "^5.0.1",
+      "gulp-if": "^3.0.0",
+      "gulp-imagemin": "^7.1.0",
+      "gulp-jsonmin": "^1.2.0",
+      "gulp-merge-json": "^2.1.2",
+      "gulp-postcss": "^9.0.1",
+      "lodash-webpack-plugin": "^0.11.6",
+      "mini-css-extract-plugin": "^2.7.2",
+      "npm-check-updates": "^16.5.6",
+      "postcss": "^8.4.20",
+      "postcss-loader": "^7.0.2",
+      "postcss-preset-env": "^7.8.3",
+      "prettier": "^2.8.1",
+      "sass": "^1.56.2",
+      "sass-loader": "^13.2.0",
+      "sharp": "^0.31.2",
+      "standard-version": "^9.5.0",
+      "vue-loader": "^17.0.1",
+      "web-ext": "^7.4.0",
+      "webpack": "^5.75.0",
+      "webpack-bundle-analyzer": "^4.7.0",
+      "webpack-cli": "^5.0.1",
+      "webpack-plugin-vuetify": "^2.0.0"
+    },
+    "overrides": {
+      "glob": "7.2.3"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,435 @@
+:root {
+  --hue: 220;
+  --sat: 100;
+  --light: 81;
+}
+
+.main-container-tahdeer-plus {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#loading-cont {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: white;
+}
+
+#main-card,
+#loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  min-width: 90vw;
+  padding: 20px 20px;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  margin: 2.5%;
+  overflow-y: scroll;
+}
+
+#loading {
+  max-width: 40vw;
+  min-width: 40vw;
+  text-align: center;
+  overflow: hidden;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid;
+}
+
+table th {
+  /* background-color: #039d8f; */
+  color: white;
+}
+
+.days {
+  /* background-color: #039d8f; */
+  color: white;
+  font-size: 1.05em;
+  min-width: 175px;
+}
+
+table th,
+td {
+  border: 1px solid;
+  padding: 3px;
+  text-align: center;
+  border-color: black;
+}
+
+table td {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+select {
+  max-width: 150px;
+  font-size: 0.7em;
+}
+
+option {
+  font-size: 0.9em;
+}
+
+.success,
+.danger,
+.inactive,
+.warning {
+  padding: 2px 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.success {
+  /* background-color: #039d8f; */
+  color: white;
+  font-weight: bold;
+}
+
+.danger {
+  background-color: #ed5565;
+  color: white;
+}
+
+.inactive {
+  background-color: rgb(160, 160, 160);
+  color: rgb(48, 48, 48);
+}
+
+.warning {
+  background-color: orange;
+  color: black;
+}
+
+.btn-sc {
+  /* background-color: #039d8f !important; */
+  padding: 4px 15px;
+  color: white !important;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.btn-sc:hover {
+  /* background-color: #006e65 !important; */
+  color: white !important;
+  filter: brightness(85%);
+}
+
+.btn-sc:focus {
+  outline: none;
+}
+
+.btns-container-tp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bolder;
+}
+
+.rounded-sc {
+  border-radius: 99999px !important;
+}
+
+.black-bg-sc {
+  background-color: black !important;
+  color: white !important;
+}
+
+#increase-btn,
+#decrease-btn {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.bg1 {
+  background-color: rgba(247, 118, 118, 0.5);
+}
+
+.bg2 {
+  background-color: rgba(180, 247, 118, 0.5);
+}
+
+.bg3 {
+  background-color: rgba(118, 247, 226, 0.5);
+}
+
+.bg4 {
+  background-color: rgba(118, 120, 247, 0.5);
+}
+
+.bg5 {
+  background-color: rgba(247, 118, 226, 0.5);
+}
+
+.bg6 {
+  background-color: rgba(255, 184, 32, 0.5);
+}
+
+.bg7 {
+  background-color: rgba(68, 68, 68, 0.315);
+}
+
+.set-cell {
+  background-color: #9ed19f54;
+}
+
+.small-btn {
+  padding: 1px 4px;
+  margin: 2px;
+}
+
+#inner-table-cont {
+  max-width: 100%;
+  overflow-x: scroll;
+  flex: 1;
+  max-height: 60%;
+}
+
+.options-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.will-del {
+  background-color: #cf5a5a30;
+}
+
+.expanded {
+  min-width: 100% !important;
+}
+
+.del-day-btn {
+  background-color: #ffffff;
+  color: #b70000 !important;
+}
+
+.del-day-btn:hover {
+  color: #720101 !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#btn-date-sc {
+  padding: 10px;
+  margin: 0px 10px;
+}
+
+.column-sc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 4px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c5c5c5;
+  width: 34px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#close-btn:hover {
+  background-color: darkred;
+  color: white;
+}
+
+.row-sc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-btn {
+  background-color: transparent !important;
+  border-radius: 2px !important;
+  font-size: 0.92em;
+  border: 1px solid white;
+}
+
+#table-cont,
+#report-container {
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999999;
+  overflow: scroll;
+}
+
+#table-cont {
+  z-index: 99999999;
+}
+
+#sc-table-edit td,
+#sc-table-edit th,
+#report-table td,
+#report-table th {
+  font-size: 0.95em;
+  min-width: 0px !important;
+  width: fit-content !important;
+}
+
+#report-table-inner-cont {
+  width: 70%;
+  margin: 2%;
+}
+
+#inner-table-cont {
+  width: 95%;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.black-text {
+  color: black !important;
+}
+
+.total-row {
+  background-color: #858585 !important;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-default {
+  border-color: black !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.sc-table-header {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.week-table {
+  margin: 0px 10px;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+  font-size: 20px !important;
+}
+
+.note-sc {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid red;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sc-icon {
+  width: 20px;
+  height: 20px;
+}
+
+._overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+._overlay ._model-close {
+  background-color: #fff;
+  padding: 20px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+
+}
+
+._model-close {
+  border-radius: 50%;
+  padding: 2rem;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+}
+
+._iframe {
+  position: absolute;
+  height: 100%;
+  width: 80vw;
+  top: 0;
+}
+
+@media screen and (min-width:800px) {
+  .page-frames {
+    width: 80vw;
+  }
+}
+@media screen and (max-width:800px) {
+  .page-frames {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .page-frames {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,121 @@
+
+--------------------
+app id : 1940163946375477
+clint token : ROKORAPFLEZFAHJBRJKW2HKLSO6A7RAB
+bearer : curl ^
+  -H "Authorization: Bearer TVRLKJUNLLQHIAUVLIP3RCV2DPTZOIKG" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id :579385920726285 
+clint token : BDNRGCSHFNYOALK3MDY5LAGX6E4FN7CV
+bearer :curl ^
+  -H "Authorization: Bearer QK2D44CVENOMG65N7DF63JVA6UK7ZCX5" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 1218776919142474
+clint token : 2Q4K6K2EWY3E3NOMUGCC5PLHNCW5S4P6
+bearer :curl ^
+  -H "Authorization: Bearer UNV5CDPMWMQ4N6HLJ5EP6N5JEET5HNMY" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 915407876303211
+clint token : U4KWDONJ5Y5LZKBPCNVE7SYURUUCSVCO
+bearer :curl ^
+  -H "Authorization: Bearer A3YLWISVOYHZS7LJBW7HXYXR3VMB3GTP" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 855128392370149
+clint token : UXQS4RK3IHER7ZGNL77IBGDJP4J6XWNB
+bearer :curl ^
+  -H "Authorization: Bearer RAOZ2M56XV2RE57ZBWXB4WDC53XL6DWM" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 943457886682390
+clint token : BJTTHYWDWZTVUHXFSSOUWKN6JSOI55Q2
+bearer : curl ^
+  -H "Authorization: Bearer 5IVT6IGOEL3H3CMX7RS6RIOHCTC6W4S4" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 1330061957843371
+clint token : DQB2SULUXJMGYHTEBM6JDKXCXYNIMTSJ
+bearer :curl ^
+  -H "Authorization: Bearer JC2VT2YBUWKUHWRQQPZXALKPAOQLUCRD" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 721695223004051
+clint token : 63EEC36INGLF7F357BDTL5MTHJBWHSZ3
+bearer :curl ^
+  -H "Authorization: Bearer IGBN2W3PJ6PYGVZR4PC7PH5B72S27RGF" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 872411340544118
+clint token : QI3GCYLXVEI357VN2NKXGW3A56I534EB
+bearer :curl ^
+  -H "Authorization: Bearer SLEGGSKHX5ULWPXOULI7BOMNXKH66UZF" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 691340222481282
+clint token : RSODJA3PG5RMK2QYKFWNU6C3BBMHXEQV
+bearer : curl ^
+  -H "Authorization: Bearer KVI3O6RUJQZ4ZWUQBCCI2CK5Q5CG6KHY" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 1578836205872718
+clint token : XNJHVMUM5H2W7G5D72N6CG6ZYEQY5TKH
+bearer :curl ^
+  -H "Authorization: Bearer 5JPGH2OHTCJWHYLXLL4F64X6OZ46VERN" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 896998324666540
+clint token : PETACGLTNUVYNYAFC4U777LJRJBBZVVL
+bearer :curl ^
+  -H "Authorization: Bearer 7MWMNC2ULYIBY26VJXYYZKSNL7MXKUOD" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------
+app id : 592705779365652
+clint token : DYCOY2BJC6N2MOVZYRTCWFFMVQSYANPA
+bearer :curl ^
+  -H "Authorization: Bearer YE7YJ5TJLG5EKGFXBX4VSVSTO5YUYJVG" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 1928098187532547
+clint token : RTIRWKE77LAKE72BDJGSQG6ZXVDV3K3B
+bearer :curl ^
+  -H "Authorization: Bearer 6MKDADRMEY45X6ENWJIGJNG4V3EKBNL3" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 569830321673113
+clint token : NXSLQGR5VADWFOUPSFYV5BYVDV2Y3MT6
+bearer : curl ^
+  -H "Authorization: Bearer UJSEKEGVWT6QCLUNUP2Z7D2YE5L5XHHZ" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+
+--------------------
+app id : 1335163960608810
+clint token : Y2ZMTTTTZKBK4ZTTAIJSATTLSYF5DUUP
+bearer :curl ^
+  -H "Authorization: Bearer I5N5WTWEXLNDJONGWZR4DCWQV6FPUSYU" ^
+  "https://api.wit.ai/message?v=20230126&q="
+
+--------------------

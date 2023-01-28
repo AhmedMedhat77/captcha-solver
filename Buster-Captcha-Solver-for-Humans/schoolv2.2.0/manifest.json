@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": " تحضير بلس ",
+  "version": "2.0.3",
+  "description": "حضر بضغطة زر في مدرستي لكل الاسبوع واضافة الواجب والنشاط والاختبار, وحذف التحاضير بشكل فردي ويومي واسبوعي, كل هذا من مكان واحد",
+  "content_scripts": [
+    {
+      "run_at": "document_idle",
+      "js": ["scripts/jq.js", "scripts/tplusminify.js"],
+      "css": ["css/main.css"],
+      "matches": ["https://schools.madrasati.sa/*"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}

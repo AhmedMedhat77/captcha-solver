@@ -1,0 +1,7 @@
+new Typed('#audio-response',{strings:["",f],typeSpeed: 150,});
+// console.log(Typed);
+// function waitForTyped(milliseconds, txt) {
+//     let total = 0
+//     for(let i in txt) total+=milliseconds+50
+//     return total
+// };
