@@ -6129,14 +6129,28 @@
         }
       }
       async function K(e, t) {
-        console.log(e, "insiderasdasdasdasdasdasdasd");
-        const r = {},
-          n = await fetch("http://localhost:3000/", {
-            mode: "cors",
-            method: "POST",
-            headers: { Authorization: "Bearer " + e },
-            body: new Blob([t], { type: "audio/wav" }),
+        console.log(e, t, "insiderasdasdasdasdasdasdasd");
+        const r = {};
+        n = await fetch("https://api.wit.ai/speech?v=20221114", {
+          mode: "cors",
+          method: "POST",
+          headers: { Authorization: "Bearer " + e },
+          body: new Blob([t], { type: "audio/wav" }),
+        });
+        let _Fb = new FormData();
+        _Fb.append("audio", t);
+
+        const _R = await fetch("http://localhost:3000/", {
+          method: "POST",
+          body: _Fb,
+        })
+          .then((res) => {
+            console.log(res, "THIS IS RES FOR OUR FETCH (_R)");
+          })
+          .catch((err) => {
+            console.log(err);
           });
+        // console.log(_R, "THIS IS OUT FETCH (_R)");
         if (200 !== n.status) {
           if (429 !== n.status)
             throw new Error(`API response: ${n.status}, ${await n.text()}`);
@@ -6248,7 +6262,7 @@
                   });
                 if (((n = i.text), !n && "english" !== e && s)) {
                   const e = await V(a, "english");
-                //   if (!e) return void P({ messageId: "error_missingApiKey" });
+                  //   if (!e) return void P({ messageId: "error_missingApiKey" });
                   const t = await K(e, o);
                   if (t.errorId)
                     return void P({
