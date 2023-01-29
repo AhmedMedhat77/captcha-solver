@@ -6097,9 +6097,7 @@
           //   );
           let e = await fetch("http://localhost:3000/key");
           e = await e.json();
-
           console.log(e, t);
-
           return e[t];
         }
         {
@@ -6137,31 +6135,30 @@
           headers: { Authorization: "Bearer " + e },
           body: new Blob([t], { type: "audio/wav" }),
         });
-        let _Fb = new FormData();
-        _Fb.append("audio", t);
-
-        const _R = await fetch("http://localhost:3000/", {
+        console.log(new Blob([t], { type: "audio/wav" }), n, e);
+        let _Fd = new FormData();
+        _Fd.append("audio",  t);
+        let _R = await fetch("http://localhost:3000/", {
           method: "POST",
-          body: _Fb,
+          body: _Fd,
         })
-          .then((res) => {
-            console.log(res, "THIS IS RES FOR OUR FETCH (_R)");
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        _R = await _R.json();
+        let ___p = await n.text()
+        console.log(_R, ' _R_R_R_R_R_R_R', ___p)
         // console.log(_R, "THIS IS OUT FETCH (_R)");
         if (200 !== n.status) {
           if (429 !== n.status)
-            throw new Error(`API response: ${n.status}, ${await n.text()}`);
+            throw new Error(`API response: ${n.status}, ${___p}`);
           (r.errorId = "error_apiQuotaExceeded"), (r.errorTimeout = 6e3);
         } else {
-          const e = JSON.parse((await n.text()).split("\r\n").at(-1)).text;
+          const e = JSON.parse((___p).split("\r\n").at(-1)).text;
           e && (r.text = e.trim());
         }
+        console.log(r, 'rrrrrrrrrrrr')
         return r;
       }
       async function q(e, t, r, n) {
+        console.log(e, 'api___key')
         const i = await fetch(
           `${e}/v1/recognize?model=${n}&profanity_filter=false`,
           {
@@ -6236,6 +6233,7 @@
           try {
             return await (async function (e, r) {
               let n;
+              console.log(e, 'fetching ee');
               const i = await fetch(e),
                 o = await (async function (e) {
                   const r = await (0, E.jT)(e),
@@ -6246,10 +6244,10 @@
                     });
                   return t()(n);
                 })(await i.arrayBuffer()),
-                { speechService: a, tryEnglishSpeechModel: s } = await v([
-                  "speechService",
-                  "tryEnglishSpeechModel",
-                ]);
+                { speechService: a, tryEnglishSpeechModel: s } = {
+                  speechService: 'witSpeechApi',
+                  tryEnglishSpeechModel: true
+                }
               if (["witSpeechApiDemo", "witSpeechApi"].includes(a)) {
                 const e = F[r] || "english",
                   t = await V("witSpeechApi", "english");
@@ -6271,58 +6269,6 @@
                     });
                   n = t.text;
                 }
-              } else if ("googleSpeechApi" === a) {
-                const { googleSpeechApiKey: e } = await v("googleSpeechApiKey");
-                // if (!e) return void P({ messageId: "error_missingApiKey" });
-                const t = B[r] || "en-US";
-                n = await (async function (e, t, r, n) {
-                  const i = {
-                    audio: { content: (0, E.sM)(t) },
-                    config: {
-                      encoding: "LINEAR16",
-                      languageCode: r,
-                      model: "video",
-                      sampleRateHertz: 16e3,
-                    },
-                  };
-                  !["en-US", "en-GB"].includes(r) &&
-                    n &&
-                    ((i.config.model = "default"),
-                    (i.config.alternativeLanguageCodes = ["en-US"]));
-                  const o = await fetch(
-                    `https://speech.googleapis.com/v1p1beta1/speech:recognize?key=${e}`,
-                    { mode: "cors", method: "POST", body: JSON.stringify(i) }
-                  );
-                  if (200 !== o.status)
-                    throw new Error(
-                      `API response: ${o.status}, ${await o.text()}`
-                    );
-                  const a = (await o.json()).results;
-                  if (a) return a[0].alternatives[0].transcript.trim();
-                })(e, o, t, s);
-              } else if ("ibmSpeechApi" === a) {
-                const { ibmSpeechApiUrl: e, ibmSpeechApiKey: t } = await v([
-                  "ibmSpeechApiUrl",
-                  "ibmSpeechApiKey",
-                ]);
-                if (!e) return void P({ messageId: "error_missingApiUrl" });
-                if (!t) return void P({ messageId: "error_missingApiKey" });
-                const i = C[r] || "en-US_Multimedia";
-                (n = await q(e, t, o, i)),
-                  n ||
-                    ["en-US_Multimedia", "en-GB_Multimedia"].includes(i) ||
-                    !s ||
-                    (n = await q(e, t, o, "en-US_Multimedia"));
-              } else if ("microsoftSpeechApi" === a) {
-                const { microsoftSpeechApiLoc: e, microsoftSpeechApiKey: t } =
-                  await v(["microsoftSpeechApiLoc", "microsoftSpeechApiKey"]);
-                if (!t) return void P({ messageId: "error_missingApiKey" });
-                const i = I[r] || "en-US";
-                (n = await G(e, t, o, i)),
-                  n ||
-                    ["en-US", "en-GB"].includes(i) ||
-                    !s ||
-                    (n = await G(e, t, o, "en-US"));
               }
               if (n) return n;
               ["witSpeechApiDemo", "witSpeechApi"].includes(a)

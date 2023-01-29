@@ -3,23 +3,16 @@ const axios = require("axios");
 const { json } = require("express");
 const app = express();
 const multer = require("multer");
-const { Blob } = require("buffer");
+const Blob = require("fetch-blob");
+//this pack is installed with bloba pack
 const fetch = require("node-fetch");
-
-// const upload = multer({ dest: "uploads/" });
-
+console.log(Blob)
 app.use(express.json());
 
-app.use(
-  express.urlencoded({
-    extended: false,
-  })
-);
+app.use(express.urlencoded({extended: false}));
 
 var upload = multer({ dest: __dirname + "/" });
 var type = upload.single("audio");
-
-// app.use(upload.array());
 
 const keys = [
   {
@@ -105,6 +98,7 @@ const keys = [
   },
 ];
 
+//change the key every 40s
 let n = 0;
 let key = keys[n];
 const keyInterval = setInterval(() => {
@@ -115,6 +109,7 @@ const keyInterval = setInterval(() => {
   key = keys[n];
 }, 40000);
 
+//sending the key and language
 app.get("/key", (req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.send(
@@ -123,49 +118,26 @@ app.get("/key", (req, res) => {
     })
   );
 });
-
+//get the audio buufer and convert to blob then send it to wit.ai then back the result to the tool
 app.post("/", type, async (req, res, next) => {
   let result = {};
   const { audio } = req.body;
-  let buffer = Buffer.from(audio);
-  let arraybuffer = Uint8Array.from(audio).buffer;
-  await fetch("https://api.wit.ai/speech?v=20221114", {
-    mode: "cors",
-    method: "POST",
-    headers: { Authorization: "Bearer " + key.client_token },
-    body: new Blob([audio], { type: "audio/wav" }),
-  })
-    .then((res) => {
-      console.log(res);
-      return res;
+  try {
+    //https://api.wit.ai/message?v=20230126
+    result = await fetch("https://api.wit.ai/speech?v=20221114", {
+      mode: "cors",
+      method: "POST",
+      headers: { Authorization: "Bearer " + key.client_token },
+      body: new Blob([audio], { type: "audio/wav" })
     })
-    .catch((err) => console.log("ERROR:", err));
-
-  //   result = await axios({
-  //     // url: "https://api.wit.ai/message?v=20230126&q=",
-  //     url: "https://api.wit.ai/speech?v=20221114",
-  //     method: "POST",
-
-  //     headers: {
-  //       "content-type": "audio/wav",
-  //       Authorization: "Bearer " + key.client_token,
-  //     },
-  //     body: new Blob([arraybuffer], { type: "audio/wav" }),
-  //     // body: arraybuffer,
-  //     // body:audio
-  //   })
-  //     .then((res) => {
-  //       console.log("#####################################################");
-  //       console.log(res, "THIS IS RESULT LASKDL:ASKDL:ASKDL:ASKDL:ASKD:LASKDL:A");
-  //       return res;
-  //     })
-  //     .catch((err) => console.log(err));
-
-  //   // console.log(req.file);
-  //   // console.log("#####################################################");
-  //   console.log(new Blob([arraybuffer], { type: "audio/wav" }));
-  //   // console.log("#####################################################");
-  //   res.send(result);
+  } catch (err) {
+    result = null
+    console.log(err)
+  }
+  result = (result) ? await result.json() : {};
+  console.log(result)
+  res.setHeader('Content-Type', 'application/json');
+  res.status(200).send(result);
 });
 
 app.listen(3000);
